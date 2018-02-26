@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Inx.Bootstraps.Views.ConversationView"
+    Title="Conversation">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition
+                Height="*" />
+            <RowDefinition>
+                <RowDefinition.Height>
+                    <OnPlatform
+                        x:TypeArguments="GridLength"
+                        Android="56"
+                        iOS="48" />
+                </RowDefinition.Height>
+            </RowDefinition>
+        </Grid.RowDefinitions>
+        <ListView
+            HasUnevenRows="true"
+            ItemsSource="{Binding Messages}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout
+                            Padding="16,8"
+                            Spacing="4">
+                            <Label
+                                FontSize="{StaticResource FontSizeSmall}"
+                                TextColor="{StaticResource ColorTextSecondary}"
+                                Text="{Binding Sender.Email}" />
+                            <Label
+                                FontSize="{StaticResource FontSizeNormal}"
+                                TextColor="{StaticResource ColorTextPrimary}"
+                                Text="{Binding Text}" />
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Grid
+            Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition
+                    Width="*" />
+                <ColumnDefinition
+                    Width="80" />
+            </Grid.ColumnDefinitions>
+            <Entry
+                Margin="16,8,0,8"
+                Placeholder="Enter a message"
+                Text="{Binding NewText}" />
+            <Button
+                Margin="0,8,16,8"
+                Grid.Column="1"
+                Text="SEND"
+                Command="{Binding SendCommand}"
+                CommandParameter="{Binding .}" />
+        </Grid>
+    </Grid>
+</ContentPage>

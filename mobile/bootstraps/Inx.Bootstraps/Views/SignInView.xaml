@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Inx.Bootstraps.Views.SignInView"
+    Title="Sign In">
+    <Grid>
+        <StackLayout
+            Padding="40"
+            VerticalOptions="Center">
+            <Label
+                Margin="40"
+                Text="INX"
+                HorizontalTextAlignment="Center"
+                FontSize="40" />
+            <Entry
+                Text="{Binding Email}"
+                Placeholder="Email" />
+            <Entry
+                Text="{Binding Password}"
+                Placeholder="Password"
+                IsPassword="true" />
+            <Button
+                Margin="24"
+                Command="{Binding SignInCommand}"
+                Text="Sign in" />
+            <!--<Entry
+                Text="{Binding PasswordConfirmation}"
+                Placeholder="Password Confirmation"
+                IsPassword="true" />-->
+            <Button
+                Margin="24"
+                Command="{Binding SignUpCommand}"
+                Text="Sign up" />
+        </StackLayout>
+    </Grid>
+</ContentPage>

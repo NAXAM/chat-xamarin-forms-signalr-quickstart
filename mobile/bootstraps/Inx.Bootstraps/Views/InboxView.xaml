@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Inx.Bootstraps.Views.InboxView"
+    x:Name="root"
+    Title="Inbox">
+    <Grid>
+        <ListView
+            ItemsSource="{Binding Friends}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell
+                        Text="{Binding Email}"
+                        TextColor="#212121"
+                        Command="{Binding BindingContext.SelectFriendCommand, Source={Reference root}}"
+                        CommandParameter="{Binding .}"
+                        />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</ContentPage>

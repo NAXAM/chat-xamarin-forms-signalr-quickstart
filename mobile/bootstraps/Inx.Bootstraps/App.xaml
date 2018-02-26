@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Application
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Inx.Bootstraps.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <Color
+                x:Key="ColorTextPrimary">#212121</Color>
+            <Color
+                x:Key="ColorTextSecondary">#717171</Color>
+            <OnPlatform
+                x:Key="FontSizeNormal"
+                x:TypeArguments="x:Double"
+                Android="16"
+                iOS="15" />
+            <OnPlatform
+                x:Key="FontSizeSmall"
+                x:TypeArguments="x:Double"
+                Android="14"
+                iOS="13" />
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
