@@ -48,8 +48,8 @@ namespace Inx.WebAPI
 
             services.AddDbContext<InxDbContext>(options =>
             {
-                options.UseSqlite(Configuration.GetConnectionString("SqliteConnection"), x => x.MigrationsAssembly(typeof(InxDbContext).Assembly.FullName));
-                //options.UseMySql(Configuration.GetConnectionString("MySqlConnection"), x => x.MigrationsAssembly(typeof(InxDbContext).Assembly.FullName));
+                //options.UseSqlite(Configuration.GetConnectionString("SqliteConnection"), x => x.MigrationsAssembly(typeof(InxDbContext).Assembly.FullName));
+                options.UseMySQL(Configuration.GetConnectionString("MySqlConnection"), x => x.MigrationsAssembly(typeof(InxDbContext).Assembly.FullName));
                 //options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"), x => x.MigrationsAssembly(typeof(InxDbContext).Assembly.FullName));
             });
 

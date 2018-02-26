@@ -7,9 +7,6 @@ using Inx.Networking.Core;
 using Inx.Bootstraps.Managers;
 using Inx.Networking;
 using Inx.Bootstraps.Services;
-using Microsoft.AppCenter;
-using Microsoft.AppCenter.Analytics;
-using Microsoft.AppCenter.Crashes;
 
 namespace Inx.Bootstraps
 {
@@ -22,7 +19,6 @@ namespace Inx.Bootstraps
             InitializeComponent();
 
             var builder = new ContainerBuilder();
-
 
             builder.Register(cg => new DefaultNetworkingClient(
                         () => new Newtonsoft.Json.JsonSerializer(),
